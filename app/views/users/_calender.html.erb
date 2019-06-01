@@ -1,0 +1,91 @@
+<div class="text-center">
+<h3 class="lead"><b><%= Date.today.month %>月<b></h3>
+<% day =  Date.new(Time.now.year, Time.now.month, 1).wday%>
+<% day_end =  Date.new(Time.now.year, Time.now.month, -1).day%>
+<table class="table table-hover">
+  <tr class="lead">
+    <th class="text-center" style="color: red">Sun</th>
+    <th class="text-center">Mon</th>
+    <th class="text-center">Tue</th>
+    <th class="text-center">Wed</th>
+    <th class="text-center">Thu</th>
+    <th class="text-center">Fri</th>
+    <th  class="text-center" style="color: blue">Sat</th>
+  </tr>
+  <% d = 1 %>
+  <% (1..6).each do |week| %>
+  <tr>
+    <td style="color: red">
+      <% if day == 1 then %>
+        <p>1</p>
+        <% day = nil %>
+      <% else %>
+        <% if day == nil %>
+          <p><%= d = d+1 if d < day_end %></p>
+        <% end %>
+      <% end %>
+    </td>
+    <td>
+      <% if day == 2 then %>
+        <p>1</p>
+        <% day = nil %>
+      <% else %>
+        <% if day == nil %>
+          <p><%= d = d+1 if d < day_end %></p>
+        <% end %>
+      <% end %>
+    </td>
+    <td>
+      <% if day == 3 then %>
+        <p>1</p>
+        <% day = nil %>
+      <% else %>
+        <% if day == nil %>
+          <p><%= d = d + 1 if d < day_end %></p>
+        <% end %>
+      <% end %>
+    </td>
+    <td>
+      <% if day == 4 then %>
+        <p>1</p>
+        <% day = nil %>
+      <% else %>
+        <% if day == nil %>
+          <p><%= d = d + 1 if d < day_end %></p>
+        <% end %>
+      <% end %>
+    </td>
+    <td>
+      <% if day == 5 then %>
+        <p>1</p>
+        <% day = nil %>
+      <% else %>
+        <% if day == nil %>
+          <p><%= d = d + 1 if d < day_end %></p>
+        <% end %>
+      <% end %>
+    </td>
+    <td>
+      <% if day == 6 then %>
+        <p>1</p>
+        <% day = nil %>
+      <% else %>
+        <% if day == nil %>
+          <p><%= d = d + 1 if d < day_end %></p>
+        <% end %>
+      <% end %>
+    </td>
+    <td style="color: blue">
+      <% if day == 0 then %>
+        <p>1</p>
+        <% day = nil %>
+      <% else %>
+        <% if day == nil %>
+          <p><%= d = d + 1 if d < day_end %></p>
+        <% end %>
+      <% end %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+</div>

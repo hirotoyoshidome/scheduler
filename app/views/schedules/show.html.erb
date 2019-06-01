@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+<h4><b>下記の内容でスケジュールを登録しました。</b></h4>
+
+<h3>
+  <strong>タイトル:<strong></strong>
+  <div class="text-danger">
+    <b><%= @schedule.title %></b>
+  </div>
+</h3>
+
+<h3>
+  <strong>日付:</strong>
+  <div class="text-danger">
+    <b><%= @schedule.plan_date %></b>
+  </div>
+</h3>
+
+<h3>
+  <strong>特記事項:</strong>
+  <div class="text-danger">
+    <b><%= @schedule.level %></b>
+  </div>
+</h3>
+<div>
+  <%= link_to 'もどる', schedules_path, :class => 'btn btn-default' %>
+</div>

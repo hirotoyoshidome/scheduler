@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p class="page-header">
+  <h1><%= @user.name %>のスケジュール</h1>
+</p>
+
+<p>
+  <strong>連絡先：</strong><b><%= @user.email %></b>
+</p>
+<% unless @schedules.blank? then%>
+<table class="table table-hover">
+  <tr>
+    <th class="text-center"><b>タイトル</b></th>
+    <th class="text-center"><b>日付</b></th>
+  </tr>
+  <% @schedules.each do |schedule| %>
+    <tr>
+      <td><b><%= schedule.title %></b></td>
+      <td><b><%= schedule.plan_date %></b></td>
+    </tr>
+  <% end %>
+</table>
+<% else %>
+  <p style="color: red">現在の予定は入っていません。</p>
+<% end %>
+<!-- カレンダー表示 -->
+<%= render 'calender' %>
+<p><%= link_to 'もどる', users_path, :class => 'btn btn-default' %></p>

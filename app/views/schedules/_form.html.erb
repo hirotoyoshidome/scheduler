@@ -1,0 +1,52 @@
+<%= form_with(model: schedule, local: true) do |form| %>
+  <% if schedule.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(schedule.errors.count, "error") %> prohibited this schedule from being saved:</h2>
+
+      <ul>
+      <% schedule.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= form.hidden_field :user_id, :value => @user_id %>
+  <div class="field">
+    <div class="form-group">
+      <div class="text-center">
+        <p><%= form.label :title, 'タイトル' %></p>
+      </div>
+      <div class="col-xs-4 col-xs-push-4">
+        <%= form.text_field :title, :class => 'form-control', :placeholder => 'title' %>
+      </div>
+    </div>
+  </div>
+  <br/>
+  <br/>
+
+  <div class="field">
+    <div class="form-group">
+      <p><%= form.label :plan_date, '日付' %></p>
+      <%= form.date_select :plan_date, {:use_month_numbers => true}, {:class => 'form-control', :style => "display: inline-block;width: auto;"} %>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="form-group">
+      <div class="text-center">
+        <p><%= form.label :level, '特記事項' %></p>
+      </div>
+      <div class="col-xs-4 col-xs-push-4">
+        <%= form.text_field :level, :class => 'form-control', :placeholder => 'others' %>
+      </div>
+    </div>
+  </div>
+  <br/>
+  <br/>
+
+  <div class="actions">
+    <div class="col-sm-4 col-sm-push-4">
+      <%= form.submit 'スケジュールを確定する', :class => 'btn btn-success' %>
+    </div>
+  </div>
+<% end %>

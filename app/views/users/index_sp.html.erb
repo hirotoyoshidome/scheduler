@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<div class="page-header">
+  <h3>スケジュール　メンバー</h3>
+</div>
+<table class="table table-hover table-condensed">
+    <% unless @users.exists? then %>
+      <p>現在ユーザーは設定されていません</p>
+    <% end %>
+    <% @users.each do |user| %>
+      <tr>
+        <td><h4><b><%= user.name %></b></h4></td>
+        <td><%= link_to '確認', user, :class => 'btn btn-info' %></td>
+        <td><%= link_to '設定', edit_user_path(user), :class => 'btn btn-success'%></td>
+      </tr>
+    <% end %>
+</table>
+
+<br>
+<%= link_to '一覧の表示', schedules_path, :class => 'btn btn-warning' %>
+<%= link_to '新規で登録する', new_user_path, :class => 'btn btn-default' %>

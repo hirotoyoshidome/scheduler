@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  plan_date: 2018-07-07
+  level: MyString
+
+two:
+  title: MyString
+  plan_date: 2018-07-07
+  level: MyString

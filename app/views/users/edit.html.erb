@@ -1,0 +1,16 @@
+<div class="page-header">
+  <h1>ユーザの編集</h1>
+</div>
+  <h4>ユーザー情報の編集はこちら</h4>
+<%= render 'form', user: @user %>
+<br/>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-2 col-sm-push-5">
+      <p><%= link_to 'もどる', users_path, :class => 'btn btn-default' %></p>
+    </div>
+    <div class="col-sm-2 col-sm-push-5">
+      <p style="color : red"><%= link_to 'スケジュールを設定する', new_schedule_path(user_id: @id), :class => 'btn btn-warning' %></p>
+    </div>
+  </div>
+<div>

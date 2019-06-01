@@ -1,0 +1,35 @@
+<div class="page-header">
+  <h1>Topページ</h1>
+</div>
+<h3><b>認証を行います。</b></h3>
+
+<strong><b>下記フォームを入力してください</b></strong>
+
+<%= form_for @top, url: top_auth_path do |form| %>
+  <div class="field">
+    <div class="text-center">
+      <%= form.label :auth_name, 'ID' %>
+    </div>
+    <div class="col-xs-4 col-xs-push-4">
+      <%= form.text_field :auth_name, :class => 'form-control', :placeholder => 'ID' %>
+    </div>
+  </div>
+  <br/>
+  <br/>
+  <div class="field">
+    <div class="text-center">
+      <%= form.label :password, 'パスワード' %>
+    </div>
+    <div class="col-xs-4 col-xs-push-4">
+      <%= form.password_field :password, :class => 'form-control', :placeholder => 'Password' %>
+    </div>
+  </div>
+  <br/>
+  <br/>
+  <div>
+    <%= form.submit '認証を行う', :class => 'btn btn-success' %>
+  </div>
+<% end %>
+<div class="text-right">
+  <%= link_to '新規作成はこちら', new_user_index_path, :class => 'btn btn-default' %>
+</div>

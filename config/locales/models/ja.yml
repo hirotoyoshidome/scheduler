@@ -1,0 +1,10 @@
+# モデルの日本語化を行う(モデルの追加時にここで設定すること)
+
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+    attributes:
+      user:
+        name: 名前
+        email: メールアドレス

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>スケジューラ_<%= @title %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- レイアウトを保つ(スマホ対応) -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  </head>
+
+  <body>
+    <div  class="all-bodys">
+      <div class="contents-white-filter">
+        <div class="text-center">
+          <% if session[:top] then%>
+            <p style="color: red">ログイン中</p>
+          <% end %>
+          <% if @sp then %>
+          <%= link_to 'ログアウト', logout_logout_path, :class => 'btn btn-warning col-xs-3 col-xs-push-8' if session[:top] %>
+          <% else %>
+            <%= link_to 'ログアウト', logout_logout_path, :class => 'btn btn-warning col-xs-1 col-xs-push-10' if session[:top] %>
+          <% end %>
+          <%= yield %>
+        </div>
+      </div>
+  </div>
+  </body>
+</html>
